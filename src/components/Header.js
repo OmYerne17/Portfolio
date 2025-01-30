@@ -27,7 +27,7 @@ export default function Header() {
                 <a href="#contact" className="navbar-link" data-nav-link>Contact</a>
               </li>
               <li>
-                <a href="#" className="btn btn-primary">Download CV</a>
+                <a href="https://drive.google.com/file/d/1VhtXIAseO14F4LNRFFISUeVjo-eYnbZr/view?usp=sharing" className="btn btn-primary">Download CV</a>
               </li>
             </ul>
           </nav>

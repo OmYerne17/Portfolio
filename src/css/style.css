@@ -1056,3 +1056,52 @@
     .footer-list { margin-inline: 0; }
   
   }
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .hero-banner {
+    position: relative;
+  }
+  
+  .hero-banner .elem {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .hero-banner .elem-1 {
+    animation-delay: 0s;
+  }
+  
+  .hero-banner .elem-2 {
+    animation-delay: 0.5s;
+  }
+  
+  .hero-banner .elem-3 {
+    animation-delay: 1s;
+  }
+  
+  .hero-title strong {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .hero-title strong:hover {
+    transform: scale(1.05);
+  }
+  
+  .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
