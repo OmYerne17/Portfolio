@@ -1,9 +1,31 @@
+"use client"
+import React, { useEffect, useState } from 'react';
+
 export default function Header() {
+    const [isVisible, setIsVisible] = useState(true);
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+        if (window.scrollY > lastScrollY) {
+            setIsVisible(false); // Scrolling down
+        } else {
+            setIsVisible(true); // Scrolling up
+        }
+        lastScrollY = window.scrollY;
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-      <header className="header" data-header>
+      <header className={`header ${isVisible ? 'visible' : 'hidden'}`} data-header>
         <div className="container">
           <a href="#">
-            <h1 className="logo">First Website.Com</h1>
+            <h1 className="logo !text-[32px] font-bold">First Website.Com</h1>
           </a>
           <button className="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
             <ion-icon name="menu-outline" className="menu-icon"></ion-icon>

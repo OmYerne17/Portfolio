@@ -1,9 +1,26 @@
-'use client'
-import { motion } from "framer-motion"
-import Image from "next/image"
-import ViewportWrapper from "./ViewportWrapper"
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import ViewportWrapper from "./ViewportWrapper";
+import { useEffect } from "react";
 
 export default function About() {
+  useEffect(() => {
+    const scriptESM = document.createElement("script");
+    scriptESM.type = "module";
+    scriptESM.src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
+    document.body.appendChild(scriptESM);
+
+    const scriptNomodule = document.createElement("script");
+    scriptNomodule.src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js";
+    document.body.appendChild(scriptNomodule);
+
+    return () => {
+      document.body.removeChild(scriptESM);
+      document.body.removeChild(scriptNomodule);
+    };
+  }, []);
+
   return (
     <section className="section about" id="about">
       <div className="container">
@@ -44,7 +61,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <ion-icon name="logo-angular"></ion-icon>
+              <ion-icon name="logo-html5"></ion-icon>
             </motion.div>
           </motion.figure>
         </ViewportWrapper>
@@ -73,12 +90,7 @@ export default function About() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              As a web developer, I craft digital experiences that blend creativity with functionality. Through coding
-              languages like HTML, CSS, and JavaScript, I bring designs to life, ensuring seamless user interactions and
-              intuitive interfaces. With a keen eye for detail and a passion for problem-solving, I strive to create
-              websites that not only meet client needs but also exceed user expectations. Constantly exploring new
-              technologies and staying updated with industry trends, I am dedicated to delivering innovative solutions in
-              the ever-evolving digital landscape.
+              As a web developer, I craft digital experiences that blend creativity with functionality. Through coding languages like HTML, CSS, and JavaScript, along with modern frameworks and libraries such as Node.js, Next.js, and React.js, I bring designs to life, ensuring seamless user interactions and intuitive interfaces. I also leverage tools like Framer Motion for dynamic animations and ShadCN UI for creating consistent and responsive components. With a keen eye for detail and a passion for problem-solving, I strive to create websites that not only meet client needs but also exceed user expectations. Constantly exploring new technologies and staying updated with industry trends, I am dedicated to delivering innovative solutions in the ever-evolving digital landscape.
             </motion.p>
             <motion.a
               href="#portfolio"
@@ -118,6 +130,5 @@ export default function About() {
         }
       `}</style>
     </section>
-  )
+  );
 }
-

@@ -26,8 +26,8 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <p className="elem-title">5</p>
-            <p className="elem-text">Months of Success</p>
+            <p className="elem-title">1</p>
+            <p className="elem-text">Year of Success</p>
           </motion.div>
           <motion.div
             className="elem elem-2"
@@ -68,7 +68,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
           >
-            The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.
+             The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.
           </motion.p>
           <motion.div
             className="btn-group"

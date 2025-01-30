@@ -914,6 +914,7 @@
     .elem-3 ion-icon {
       color: var(--minion-yellow);
       font-size: 6rem;
+      background-image: url("http://127.0.0.1:5500/Portfolio/images/Om%20banner%20.jpg")      ;
     }
   
     .rotate-img {
