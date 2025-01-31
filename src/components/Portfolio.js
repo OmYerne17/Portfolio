@@ -26,8 +26,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
               >
-                <motion.a
-                  href="#"
+                <motion.div
                   className="portfolio-card"
                   style={{
                     backgroundImage: `url('./images/portfolio-${item}.jpg')`,
@@ -102,7 +101,7 @@ export default function Portfolio() {
                       <ion-icon name="arrow-forward"></ion-icon>
                     </motion.span>
                   </motion.div>
-                </motion.a>
+                </motion.div>
               </motion.li>
             ))}
           </ul>

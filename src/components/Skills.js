@@ -4,12 +4,14 @@ import ViewportWrapper from "./ViewportWrapper"
 
 export default function Skills() {
   const skills = [
-    { name: "CSS", value: 70 },
-    { name: "React", value: 60 },
-    { name: "MongoDB", value: 50 },
-    { name: "Python", value: 75 },
-    { name: "PHP", value: 50 },
+    { name: "HTML", value: 80 },
+    { name: "CSS", value: 80 },
+    { name: "React", value: 70 },
+    { name: "NEXTJS", value: 65 },
+    { name: "MongoDB", value: 70 },
     { name: "JavaScript", value: 55 },
+    { name: "NodeJS", value: 70 },
+    { name: "SHAD CN UI", value: 70 },
   ]
 
   return (

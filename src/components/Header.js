@@ -24,8 +24,8 @@ export default function Header() {
     return (
       <header className={`header ${isVisible ? 'visible' : 'hidden'}`} data-header>
         <div className="container">
-          <a href="#">
-            <h1 className="logo !text-[32px] font-bold">First Website.Com</h1>
+        <a href="#">
+            <h1 className="logo !text-[32px] font-bold list-disc hover:text-transparent bg-clip-text bg-gradient-to-r from-orange-900 to-orange-300">CodeWithOm.Com</h1>
           </a>
           <button className="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
             <ion-icon name="menu-outline" className="menu-icon"></ion-icon>

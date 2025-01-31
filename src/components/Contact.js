@@ -70,7 +70,7 @@ export default function Contact() {
                           {icon === "location" ? "Address" : icon === "mail" ? "Email" : "Phone"}
                         </h3>
                         {icon === "location" ? (
-                          <address className="contact-item-link">Plot No-17, Wardha, India</address>
+                          <address className="contact-item-link"> BDCOE College, Wardha, India</address>
                         ) : icon === "mail" ? (
                           <a href="mailto:omyerane2004@gmail.com" className="contact-item-link">
                             omyerane2004@gmail.com

@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <p className="copyright">
-          &copy; 2022 <a href="#" className="copyright-link">codewithom</a>. All Rights Reserved
+          &copy; 2025 <a href="#" className="copyright-link">codewithom</a>. All Rights Reserved
         </p>
         <ul className="footer-list">
           <li>
