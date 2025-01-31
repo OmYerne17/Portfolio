@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import ViewportWrapper from "./ViewportWrapper";
 import { useEffect } from "react";
 
@@ -31,14 +30,15 @@ export default function About() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <Image
-              src="/images/about banner.jpeg"
-              width={800}
-              height={652}
-              loading="lazy"
-              alt="Photo"
-              className="img-cover"
-            />
+          <img 
+            src="./images/about banner.jpeg" 
+            width="800" 
+            height="652" 
+            loading="lazy" 
+            alt="Photo" 
+            className="img-cover" 
+          />
+
             <motion.div
               className="abs-icon abs-icon-1"
               initial={{ opacity: 0, y: 20 }}

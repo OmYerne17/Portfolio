@@ -1,6 +1,5 @@
 'use client'
 import { motion } from "framer-motion"
-import Image from "next/image"
 
 export default function Hero() {
   return (
@@ -12,14 +11,15 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Image
-            src="/images/Om banner .jpg"
-            width={800}
-            height={864}
-            loading="lazy"
-            alt="Om photos"
-            className="img-cover"
-          />
+      <img 
+        src="./images/Om banner .jpg" 
+        width="800" 
+        height="864" 
+        loading="lazy" 
+        alt="Om photos" 
+        className="img-cover" 
+      />
+
           <motion.div
             className="elem elem-1"
             initial={{ opacity: 0, x: -20 }}
