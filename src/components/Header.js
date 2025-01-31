@@ -1,10 +1,28 @@
 import { jsx as _jsx, jsxs as _jsxs } from 'react/jsx-runtime';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
- 
+  const [isVisible, setIsVisible] = useState(true);
+  let lastScrollY = window.scrollY;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="header  data-header">
+    <header className={`header data-header ${isVisible ? 'visible' : 'hidden'}`}>
       <div className="container">
         <a href="#">
           <h1 className="logo !text-[32px] font-bold list-disc hover:text-transparent bg-clip-text bg-gradient-to-r from-orange-900 to-orange-300">
