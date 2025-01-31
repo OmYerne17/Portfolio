@@ -1,28 +1,58 @@
+'use client';
 import { jsx as _jsx, jsxs as _jsxs } from 'react/jsx-runtime';
+import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function Header() {
-  const [isVisible, setIsVisible] = useState(true);
-  let lastScrollY = window.scrollY;
+  const [visible, setVisible] = useState(true);
+  const controls = useAnimation();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setIsVisible(false);
+      const currentScrollY = window.scrollY;
+      console.log('Current Scroll Y:', currentScrollY); // Debugging log
+      console.log('Last Scroll Y:', lastScrollY); // Debugging log
+
+      if (currentScrollY > lastScrollY) {
+        setVisible(false);
       } else {
-        setIsVisible(true);
+        setVisible(true);
       }
-      lastScrollY = window.scrollY;
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  useEffect(() => {
+    console.log('Header visibility:', visible); // Debugging log
+    if (visible) {
+      controls.start({ opacity: 1, y: 0 });
+    } else {
+      controls.start({ opacity: 0, y: -100 });
+    }
+  }, [visible, controls]);
+
+  // Don't render anything until mounted
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <header className={`header data-header ${isVisible ? 'visible' : 'hidden'}`}>
+    <motion.header 
+      className="header data-header" 
+      animate={controls}
+      initial={{ opacity: 1, y: 0 }}
+    >
+      {/* Rest of your JSX remains the same */}
       <div className="container">
         <a href="#">
           <h1 className="logo !text-[32px] font-bold list-disc hover:text-transparent bg-clip-text bg-gradient-to-r from-orange-900 to-orange-300">
@@ -55,6 +85,6 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 }
